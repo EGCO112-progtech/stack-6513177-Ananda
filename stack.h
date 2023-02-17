@@ -10,7 +10,7 @@ typedef struct {
 
 typedef Stack * StackPtr;
 
-void push(StackPtr s, int value)
+void push(StackPtr s, char value)
 {
 	NodePtr new_node = (NodePtr) malloc(sizeof(Node));
 

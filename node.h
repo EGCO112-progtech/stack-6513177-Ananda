@@ -14,7 +14,7 @@
 
 struct node
 {
-    int data;
+    char data;
     struct node *nextPtr;
 };
 
