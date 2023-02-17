@@ -33,7 +33,7 @@ int pop(StackPtr s)
         free(t);
         return value;
     }
-    printf("Empty stack\n");
+    // printf("Empty stack\n");
     return 0;
 }
 
@@ -41,7 +41,8 @@ void pop_all(StackPtr s)
 {
 	while (s->size > 0)
 	{
-		printf("%d\n", pop(s));
+		pop(s);
+		s->size--;
 	}
 }
 #endif
