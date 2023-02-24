@@ -17,8 +17,7 @@ int main(int argc, char **argv) {
     incorrect = 1;
     int p = 0;
     for (j = 0; j < strlen(argv[i]); j++) // Home work code
-    {
-      int counter = 0; // 0 = mis 2 = open 3 = close
+    { // 0 = mis 2 = open 3 = close
       switch (argv[i][j]) {
       case '{':
       case '[':
@@ -35,13 +34,10 @@ int main(int argc, char **argv) {
     }
     if (p == 0) incorrect = 3;
     if (s.size > 0) incorrect = 2;
-    // printf("This is incorrect: %d", incorrect);
     checking(incorrect, i);
     pop_all(&s);
   }
-
   pop_all(&s);
-
   return 0;
 }
 
