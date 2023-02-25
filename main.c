@@ -58,11 +58,11 @@ int main(int argc, char **argv) {
 void checking(int incorrect, int i)
 {
   if (incorrect == 0) {
-    printf("argv %d: inCorrect: mismatch\n", i);
+    printf("argv %d: incorrect: mismatch\n", i);
   } else if (incorrect == 2)
-    printf("argv %d: inCorrect: too many open parenthesis\n", i);
+    printf("argv %d: incorrect: too many open parenthesis\n", i);
   else if (incorrect == 3)
-    printf("argv %d: inCorrect: too many closed parenthesis\n", i);
+    printf("argv %d: incorrect: too many closed parenthesis\n", i);
   else
     printf("argv %d: correct\n", i);
 }
