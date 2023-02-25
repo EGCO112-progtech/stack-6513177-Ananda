@@ -20,7 +20,7 @@ void push(StackPtr s, char value) {
     s->size++;
   }
 }
-int pop(StackPtr s) {
+char pop(StackPtr s) {
   int *tmp;
   NodePtr t = s->top;
   if (t) {
@@ -31,7 +31,7 @@ int pop(StackPtr s) {
     return value;
   }
   // printf("Empty stack\n");
-  return '3';
+  return 'a';
 }
 
 void pop_all(StackPtr s) {

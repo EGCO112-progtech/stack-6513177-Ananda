@@ -15,26 +15,27 @@ int main(int argc, char **argv) {
   printf("Checking the parentheses in argv arguments\n");
   for (i = 1; i < argc; i++) {
     incorrect = 1;
-    int p = 0;
+    char z;
+    // int p = 0;
     for (j = 0; j < strlen(argv[i]); j++) // Home work code
     { // 0 = mis 2 = open 3 = close
       switch (argv[i][j]) {
       case '{':
       case '[':
         push(&s, argv[i][j]);
-        p = 1;
         break;
       case '}':
-        if (pop(&s) != '{') incorrect = 0;
-        else p = 0;
+        z = pop(&s);
+        if (z == 'a') incorrect = 3;
+        else if (z != '{') incorrect = 0;
         break;
       case ']':
-        if (pop(&s) != '[') incorrect = 0;
-        else p = 0;
+        z = pop(&s);
+        if (z == 'a') incorrect = 3;
+        else if (z != '[') incorrect = 0;
         break;
       }
     }
-    if (p == 0) incorrect = 3;
     if (s.size > 0) incorrect = 2;
     checking(incorrect, i);
     pop_all(&s);
