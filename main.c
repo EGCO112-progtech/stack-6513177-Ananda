@@ -12,6 +12,7 @@ int main(int argc, char **argv) {
   s.top = NULL;
   s.size = 0;
   int incorrect = 1;
+  int counter = 0;
   printf("Checking the parentheses in argv arguments\n");
   for (i = 1; i < argc; i++) {
     incorrect = 1;
@@ -26,17 +27,27 @@ int main(int argc, char **argv) {
         break;
       case '}':
         z = pop(&s);
-        if (z == 'a') incorrect = 3;
+        if (z == 'a')
+        {
+          incorrect = 3;
+          counter++;
+        }
         else if (z != '{') incorrect = 0;
         break;
       case ']':
         z = pop(&s);
-        if (z == 'a') incorrect = 3;
+        if (z == 'a')
+        {
+          incorrect = 3;
+          counter++;
+        }
         else if (z != '[') incorrect = 0;
         break;
       }
     }
-    if (s.size > 0) incorrect = 2;
+    if (s.size - counter > 0) incorrect = 2;
+    else if (s.size - counter < 0) incorrect = 3;
+
     checking(incorrect, i);
     pop_all(&s);
   }
