@@ -26,9 +26,11 @@ int main(int argc, char **argv) {
         break;
       case '}':
         if (pop(&s) != '{') incorrect = 0;
+        else p = 0;
         break;
       case ']':
         if (pop(&s) != '[') incorrect = 0;
+        else p = 0;
         break;
       }
     }
